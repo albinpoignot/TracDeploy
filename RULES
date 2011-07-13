@@ -1,0 +1,48 @@
+This file aims to give all the conventions used by the developpers in the 
+project.
+
+  #### Part 1 : Graphical style
+
+    ¤ Gold rules
+      - Every time you change style, put ${NC} to the end of the echo to be 
+      sure to give back the same env to futur developpers
+      - Respect the given conventions to leave the scripts easy to used
+      - Delete the maximum of lines displayed by others programs. This tools is
+      designed to simplify the deployement, not for technical details. This
+      kind of display will come later.
+
+    ¤ Question to a user :
+      echo -e "${Purple}<QUESTION> [ <[default value]> ]${NC}"
+    
+    ¤ Error in the user answer :
+      echo -e "${Red}<QUESTION 2> [ <[default value]> ]${NC}"
+    
+    ¤ A step in the script :
+      echo -e "${Yellow} Step <number> on <number> : <step desc>${NC}"
+    
+    ¤ End of a step :
+      echo -e "${LightBlue}--> ${Bold}${Green}Done${NC}\n"
+
+    ¤ Substep :
+      If it's a normal substep :
+	echo -e "${Green}\t* ${NC}<substep desc>"
+      
+      If it's a "warning" substep :
+	echo -e "${Yellow}\t* ${NC}<substep desc>"
+
+    ¤ Error :
+      echo -e "${Red}\t* <error desc>. ABORT" <err code>>&2
+      return <err code>
+
+    ¤ Start of a script :
+        echo -e "${LightBlue}#############################################"
+	echo -e "\t${Yellow}<Script Desc> "
+	echo -e "${LightBlue}#############################################${NC}"
+
+    ¤ Normal end of a script :
+      echo -e "${LightBlue}########## ${Yellow}End of the <script desc> ${LightBlue}##########${NC}\n\n"
+      
+  
+  #### Part 2 : Error handling
+    
+    Error codes are given in the file MANAGE_TRAC.sh 

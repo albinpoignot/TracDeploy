@@ -1,0 +1,21 @@
+TracDeploy is about give an easy to deploy Trac without a graphical user interface, on Linux systems.
+
+It's created for Gentoo based systems, and actually being tested on a Sabayon (v6). However, it should be cross-platform if you don't use the "Init packages"
+par which is the only one part dependent of the system.
+
+In this time, you require this tools (all other can be installed by the "Init packages part" :
+
+  - perl
+
+
+
+To launch the tools, use this command :
+
+  ./MANAGE_TRAC.sh [</path/to/trac/env> [</path/to/svn/repo>]]
+
+
+
+If any question, or something else like critics, tell me :)
+
+
+Albin
