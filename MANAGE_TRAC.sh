@@ -62,19 +62,19 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Import files
-source colors.sh
+source technicals/colors.sh
 
-source INIT_init_trac_project.sh
-source INIT_packages_installation_sabayon.sh
+source technicals/INIT_init_trac_project.sh
+source technicals/INIT_packages_installation_sabayon.sh
 
-source TRAC_add.sh
-source TRAC_remove.sh
+source technicals/TRAC_add.sh
+source technicals/TRAC_remove.sh
 
-source SVN_add_group.sh
-source SVN_delete_group.sh
+source technicals/SVN_add_group.sh
+source technicals/SVN_delete_group.sh
 
-source SVN_perm_add.sh
-source SVN_perm_remove.sh
+source technicals/SVN_perm_add.sh
+source technicals/SVN_perm_remove.sh
 
 
 # Display
