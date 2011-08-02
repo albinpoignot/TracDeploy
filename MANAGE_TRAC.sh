@@ -44,6 +44,9 @@ set -o nounset
 # Trap error
 trap exit_error ERR
 
+# Import colors
+source technicals/colors.sh
+
 function exit_error
 {
   echo "${Red}##################################################################"
@@ -54,16 +57,22 @@ function exit_error
   exit 1
 }
 
+if [[ $1 = "-help" ]]; then
+  echo -e "${Bold}TracDeploy allows you to easily deploy a Trac Environnement.${NC}
+It is designed for non-technical people and all processes no need technical stuff. 
+However, you have to enter the path of your (futur) Trac environment and of your (futur) SVN repository\n\n"
+  echo "Usage : ./MANAGE_TRAC.sh [/path/to/trac [/path/to/svn]]"
+  exit 1
+fi
+
 
 # Check if the user is root
 if [[ $EUID -ne 0 ]]; then
-   echo "$(tput setaf 1)***** This script must be run as root *****" 1>&2
-   exit 1
+  echo "$(tput setaf 1)***** This script must be run as root *****" 1>&2
+  exit 1
 fi
 
 # Import files
-source technicals/colors.sh
-
 source technicals/INIT_init_trac_project.sh
 source technicals/INIT_packages_installation_sabayon.sh
 

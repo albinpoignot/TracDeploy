@@ -35,4 +35,6 @@ Cyan="$(tput setaf 6)"
 CyanBG="$(tput setab 6)"
 LightCyan="$(tput bold ; tput setaf 6)"
 
+Bold="$(tput sgr0 ; tput bold)"
+
 NC="$(tput sgr0)" # No Color 
