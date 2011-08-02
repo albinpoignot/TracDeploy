@@ -204,8 +204,8 @@ function init_trac_project
     rmdir $TempDIR
   fi
 
-  echo -e "${Green}\t* ${NC}Change the files owner${NC}"
-  chown -R apache:apache $svnPath
+  #echo -e "${Green}\t* ${NC}Change the files owner${NC}"
+  #chown -R apache:apache $svnPath
 
   echo -e "${Green}\t* ${NC}Clean up the authz file to allow futur automatic configs"
   echo -e "[aliases]\n\n[groups]\n\n[/]\n"$adminName" = rw\n" >> $svnPath/conf/authz.tmp && mv $svnPath/conf/authz.tmp $svnPath/conf/authz
