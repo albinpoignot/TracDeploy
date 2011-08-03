@@ -57,14 +57,17 @@ function exit_error
   exit 1
 }
 
-if [[ $1 = "-help" ]]; then
-  echo -e "${Bold}TracDeploy allows you to easily deploy a Trac Environnement.${NC}
-It is designed for non-technical people and all processes no need technical stuff. 
-However, you have to enter the path of your (futur) Trac environment and of your (futur) SVN repository\n\n"
-  echo "Usage : ./MANAGE_TRAC.sh [/path/to/trac [/path/to/svn]]"
-  exit 1
-fi
+if [[ $# -gt 0 ]]; then
 
+  if [[ $1 = "-help" ]]; then
+    echo -e "${Bold}TracDeploy allows you to easily deploy a Trac Environnement.${NC}
+  It is designed for non-technical people and all processes no need technical stuff. 
+  However, you have to enter the path of your (futur) Trac environment and of your (futur) SVN repository\n\n"
+    echo "Usage : ./MANAGE_TRAC.sh [/path/to/trac [/path/to/svn]]"
+    exit 1
+  fi
+
+fi
 
 # Check if the user is root
 if [[ $EUID -ne 0 ]]; then
